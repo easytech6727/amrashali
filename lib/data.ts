@@ -180,9 +180,9 @@ export async function getCVData(): Promise<CVData> {
 export async function getOwnerProfile(): Promise<OwnerProfile> {
   return {
     name: "Mohamed Hakeem Mohamed Amras Ali",
-    role: "Social Work Undergraduate",
-    bio: "I am a talented, ambitious and hardworking individual, with broad skills and experience in Social services, social media and leading projects. Furthermore, I am adept at handling multiple tasks on a daily basis competently and at working well under pressure. A key strength is communication; building strong relationships with people in order to deliver the best results.",
-    imageUrl: "/ab-journal/profile-removebg-preview.png",
+    role: "Founder & Editor-in-Chief",
+    bio: `I am Amras Ali, an undergraduate in social work at the National Institute of Social Development, driven by a deep commitment to social insight, critical thinking, and purposeful impact. My work is grounded in understanding the complexities of society while exploring meaningful pathways for change.\n\nAB Journal reflects my vision to create a thoughtful and influential platform that goes beyond conventional content. It is a space dedicated to ideas that matter, perspectives that challenge, and narratives that connect people to real social experiences. Through this platform, I aim to present knowledge in a way that is both reflective and relevant to contemporary society.\n\nMy journey is shaped by a strong interest in community engagement, social innovation, and youth-led initiatives. I believe in the power of informed voices, ethical leadership, and consistent action to shape a more conscious and inclusive future.\n\nAB Journal stands as an extension of that belief — a platform built not just to share, but to influence, inspire, and leave a lasting impact.`,
+    imageUrl: "/ab-journal/profile-removebg-preview.jpeg",
     imageAlt: "Author profile",
     backgroundImageUrl: "/ab-journal/background%20image.jpeg",
   };

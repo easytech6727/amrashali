@@ -95,7 +95,7 @@ export default function OwnerClient({
                   src={ownerProfile.imageUrl}
                   alt={ownerProfile.imageAlt || ownerProfile.name}
                   fill
-                  className="object-contain object-top"
+                  className="object-cover object-top"
                   priority
                   sizes="(max-width: 640px) 240px, (max-width: 1024px) 280px, 300px"
                 />
@@ -140,7 +140,20 @@ export default function OwnerClient({
                   Contact
                 </h3>
                 <div className="space-y-4">
-                  {contact.phone && (
+                  {/* WhatsApp Contact */}
+                  <div className="flex items-start gap-4">
+                    <ContactIcon>
+                      <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16.862 14.387c-.272-.136-1.607-.793-1.855-.883-.248-.09-.429-.136-.61.136-.18.272-.7.883-.858 1.064-.158.18-.315.203-.587.068-.272-.136-1.148-.423-2.187-1.348-.81-.722-1.358-1.613-1.518-1.885-.158-.272-.017-.419.12-.555.124-.123.272-.32.408-.48.136-.16.18-.272.272-.453.09-.18.045-.34-.022-.48-.068-.136-.61-1.473-.836-2.018-.22-.53-.445-.457-.61-.465l-.52-.009c-.18 0-.47.068-.717.34-.247.272-.94.92-.94 2.24 0 1.32.962 2.591 1.096 2.77.136.18 1.893 2.893 4.59 3.94.642.221 1.142.353 1.532.452.643.163 1.228.14 1.69.085.516-.061 1.607-.656 1.834-1.29.227-.634.227-1.178.158-1.29-.068-.113-.247-.18-.52-.317z" />
+                        <circle cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="2" fill="none" />
+                      </svg>
+                    </ContactIcon>
+                    <a href="https://wa.me/94741154696" target="_blank" rel="noopener noreferrer" className="text-text-light dark:text-text-dark hover:text-accent transition-colors font-medium">
+                      Contact Us on WhatsApp
+                    </a>
+                  </div>
+
+                  {contact && contact.phone && (
                     <div className="flex items-start gap-4">
                       <ContactIcon>
                         <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -152,7 +165,19 @@ export default function OwnerClient({
                       </a>
                     </div>
                   )}
-                  {contact.email && (
+                                    {/* Social Links */}
+                                    <div className="flex gap-4 pt-2">
+                                      <a href="https://www.facebook.com/share/1FNKwbNNqQ/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+                                        <svg className="w-7 h-7 text-[#1877F3] hover:text-accent" fill="currentColor" viewBox="0 0 24 24"><path d="M22.675 0h-21.35C.595 0 0 .592 0 1.326v21.348C0 23.408.595 24 1.326 24h11.495v-9.294H9.691v-3.622h3.13V8.413c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.463.099 2.797.143v3.24l-1.918.001c-1.504 0-1.797.715-1.797 1.763v2.313h3.587l-.467 3.622h-3.12V24h6.116C23.406 24 24 23.408 24 22.674V1.326C24 .592 23.406 0 22.675 0"/></svg>
+                                      </a>
+                                      <a href="https://www.instagram.com/amras_ali23?igsh=aWtuMWZhZmN0MGRk&utm_source=qr" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                                        <svg className="w-7 h-7 text-[#E4405F] hover:text-accent" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 1.366.062 2.633.334 3.608 1.308.974.974 1.246 2.242 1.308 3.608.058 1.266.069 1.646.069 4.85s-.012 3.584-.07 4.85c-.062 1.366-.334 2.633-1.308 3.608-.974.974-2.242 1.246-3.608 1.308-1.266.058-1.646.069-4.85.069s-3.584-.012-4.85-.07c-1.366-.062-2.633-.334-3.608-1.308-.974-.974-1.246-2.242-1.308-3.608C2.175 15.647 2.163 15.267 2.163 12s.012-3.584.07-4.85c.062-1.366.334-2.633 1.308-3.608C4.515 2.567 5.783 2.295 7.149 2.233 8.415 2.175 8.795 2.163 12 2.163zm0-2.163C8.741 0 8.332.012 7.052.07 5.771.128 4.659.334 3.678 1.315c-.98.98-1.187 2.092-1.245 3.373C2.012 8.332 2 8.741 2 12c0 3.259.012 3.668.07 4.948.058 1.281.265 2.393 1.245 3.373.98.98 2.092 1.187 3.373 1.245C8.332 23.988 8.741 24 12 24s3.668-.012 4.948-.07c1.281-.058 2.393-.265 3.373-1.245.98-.98 1.187-2.092 1.245-3.373.058-1.28.07-1.689.07-4.948 0-3.259-.012-3.668-.07-4.948-.058-1.281-.265-2.393-1.245-3.373-.98-.98-2.092-1.187-3.373-1.245C15.668.012 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zm0 10.162a3.999 3.999 0 110-7.998 3.999 3.999 0 010 7.998zm6.406-11.845a1.44 1.44 0 11-2.88 0 1.44 1.44 0 012.88 0z"/></svg>
+                                      </a>
+                                      <a href="https://www.linkedin.com/in/amras-ali-6994b1218?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                                        <svg className="w-7 h-7 text-[#0077B5] hover:text-accent" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.327-.027-3.037-1.849-3.037-1.851 0-2.132 1.445-2.132 2.939v5.667H9.358V9h3.414v1.561h.049c.476-.899 1.637-1.849 3.37-1.849 3.602 0 4.267 2.368 4.267 5.455v6.285zM5.337 7.433c-1.144 0-2.069-.926-2.069-2.069 0-1.144.925-2.069 2.069-2.069 1.144 0 2.069.925 2.069 2.069 0 1.143-.925 2.069-2.069 2.069zm1.777 13.019H3.56V9h3.554v11.452zM22.225 0H1.771C.792 0 0 .771 0 1.723v20.549C0 23.229.792 24 1.771 24h20.451C23.2 24 24 23.229 24 22.271V1.723C24 .771 23.2 0 22.225 0z"/></svg>
+                                      </a>
+                                    </div>
+                  {contact && contact.email && (
                     <div className="flex items-start gap-4">
                       <ContactIcon>
                         <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -164,20 +189,32 @@ export default function OwnerClient({
                       </a>
                     </div>
                   )}
-                  {contact.address && (
-                    <div className="flex items-start gap-4">
-                      <ContactIcon>
-                        <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-                        </svg>
-                      </ContactIcon>
-                      <span className="text-text-light dark:text-text-dark">
-                        {contact.address}
-                      </span>
-                    </div>
+                  {contact && contact.address && (
+                    <>
+                      <div className="flex items-start gap-4">
+                        <ContactIcon>
+                          <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                          </svg>
+                        </ContactIcon>
+                        <span className="text-text-light dark:text-text-dark">
+                          {contact.address}
+                        </span>
+                      </div>
+                      {/* WhatsApp QR Code under address */}
+                      <div className="flex justify-center pt-2">
+                        <Image
+                          src="/ab-journal/whatsappqr.jpeg"
+                          alt="WhatsApp QR Code"
+                          width={200}
+                          height={200}
+                          className="rounded-xl border border-primary/20 shadow"
+                        />
+                      </div>
+                    </>
                   )}
-                  {!contact.phone && !contact.email && !contact.address && (
+                  {(!contact || (!contact.phone && !contact.email && !contact.address)) && (
                     <p className="text-text opacity-80 text-sm">Add contact info in cv_contact table.</p>
                   )}
                 </div>

@@ -61,7 +61,7 @@ export default function Footer() {
               </li>
               <li>
                 <a
-                  href="https://www.instagram.com/amras_ali23?igsh=aWtuMWZhZmN0MGRk&utm_source=qr"
+                  href="https://www.instagram.com/abjournal.lk?igsh=MWJncXo0dW92OThnaA%3D%3D&utm_source=qr"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-gray-300 hover:text-white transition-colors"
