@@ -1,14 +1,14 @@
-import { getFeaturedArticles, getFeaturedProjects } from "@/lib/data";
+import { getFeaturedJournals, getFeaturedProjects } from "@/lib/data";
 import Hero from "@/components/Hero";
 import HeroMobile from "@/components/HeroMobile";
-import FeaturedArticles from "@/components/FeaturedArticles";
+import FeaturedJournals from "@/components/FeaturedJournals";
 import FeaturedProjects from "@/components/FeaturedProjects";
 
 export const revalidate = 60;
 
 export default async function Home() {
-  const [featuredArticles, featuredProjects] = await Promise.all([
-    getFeaturedArticles(),
+  const [featuredJournals, featuredProjects] = await Promise.all([
+    getFeaturedJournals(),
     getFeaturedProjects(),
   ]);
 
@@ -23,7 +23,7 @@ export default async function Home() {
         <Hero />
       </div>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 lg:py-32">
-        <FeaturedArticles articles={featuredArticles} />
+        <FeaturedJournals journals={featuredJournals} />
         <FeaturedProjects projects={featuredProjects} />
       </div>
     </div>

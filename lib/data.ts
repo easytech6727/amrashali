@@ -1,6 +1,7 @@
 import { createServerSupabaseClient } from "@/lib/supabaseClient";
 import type {
   Article,
+  Journal,
   Project,
   Service,
   CVData,
@@ -15,7 +16,7 @@ import type {
 } from "@/types/journal";
 
 // Re-export types so existing imports from "@/lib/data" keep working
-export type { Article, Project, Service };
+export type { Article, Journal, Project, Service };
 export type Education = CVEducation;
 export type Experience = CVExperience;
 export type CommunityWork = CVCommunityWork;
@@ -23,6 +24,25 @@ export type Skill = CVSkill;
 export type Language = CVLanguage;
 export type Certification = CVCertification;
 export type { CVData, OwnerProfile };
+
+// ─── Journals ────────────────────────────────────────────────
+
+export async function getFeaturedJournals(): Promise<Journal[]> {
+  const sb = createServerSupabaseClient();
+  const { data, error } = await sb
+    .from("journals")
+    .select("*")
+    .eq("published", true)
+    .order("created_at", { ascending: false })
+    .limit(3);
+
+  if (error) {
+    console.error("getFeaturedJournals error:", error.message);
+    return [];
+  }
+
+  return data as Journal[];
+}
 
 // ─── Articles ────────────────────────────────────────────────
 
